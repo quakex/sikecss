@@ -21,17 +21,16 @@ h1, h2, h3, h4, h5, h6 {
   width: 960px;
   margin: 0 auto;
   margin-top: 80px;
+
+  text-align: center;
 }
 
 .main-header {
-  text-align: center;
   background-image: url(../img/banner.jpg);
   padding: 1px;
 }
 
 .main-header__avatar {
-  display: block;
-  margin: 0 auto;
   margin-top: -70px;
   margin-bottom: 10px;
   border: 3px solid white;
@@ -41,24 +40,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-header h1 {
-  width: 400px;
-  margin: 0 auto;
   font-size: 50px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
   color: white;
 }
 
+
+/*------------------------------------------------------------------------------*/
 /*task 2 : 导航和页面内容*/
+/*------------------------------------------------------------------------------*/
 
 .main-nav {
   background-color: #333;
-  text-align: center;
+  padding: 1px;
+}
+
+.main-nav ul {
+  /*去除ul的格式*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .main-nav ul li {
+  /*设置 li 的外边框*/
   margin: 15px 10px;
-  width: auto;
+  /*li 设置为内联模式，以便在一行*/
   display: inline-block;
+
 }
 
 .main-nav ul li a {
@@ -73,10 +82,75 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-.main-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
+
+/*------------------------------------------------------------------------------*/
+/*what i do section*/
+/*------------------------------------------------------------------------------*/
+
+.info-section {
+  background-color: #fff;
+  padding: 30px 60px; /* 上下左右留点空*/
 }
 
+.info-section ul {
+  list-style: none;
+}
 
+.info-section ul li{
+  display: inline-block;
+}
+
+.info-section header h2 {
+  margin-bottom: 20px;
+
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.info-section header h2:after {
+  content: "";
+  border-bottom: 3px solid black;
+}
+
+.info-section__description {
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+.whatido__skill-list {
+    /*overflow: hidden 强制容器有足够的高度包围飘动元素。*/
+  overflow: hidden;
+}
+/*给每个 li 设置预留图片的位置，图片的相关属性*/
+.whatido__skill {
+  background-repeat: no-repeat;
+  background-position: center top;
+  float: left;
+  width: 33.3%;
+  /*为图片留空间空间*/
+  padding-top: 100px;
+}
+
+/*为每个技能配图片*/
+.whatido__skill--code {
+  background-image: url(../img/skill-code.png);
+}
+
+.whatido__skill--design {
+  background-image: url(../img/skill-design.png);
+}
+
+.whatido__skill--product {
+  background-image: url(../img/skill-product.png);
+}
+
+.whatido__skill p {
+  width: 90%;
+}
+
+header h2:after {
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+
+}
