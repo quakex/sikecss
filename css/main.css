@@ -1,11 +1,26 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*----------------------------------------*/
+/*固定背景*/
 body {
   background-image: url(../img/bg5.jpg);
+  /*背景不随页面滚动而滚动*/
   background-attachment: fixed;
+  /*背景图始终充满整个屏幕*/
   background-size: cover;
+  /*背景图居中*/
   background-position: center;
 
 }
 
+/* 全局字体, 各模块再按需调整 */
 body {
   font-family: 'Open Sans', 'helvetica', arial, sans-serif;
   font-weight: 300;
@@ -17,20 +32,30 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
+/*----------------------------------------*/
+/*页面内容加上外包围圈，
+ 围框里所有 block 元素的默认宽度是充满父容器的宽度，不需要个别为每个元素设置宽度。*/
 .container {
+  /*外包围框的宽度*/
   width: 960px;
+  /*居中显示*/
   margin: 0 auto;
-  margin-top: 80px;
-
-  text-align: center;
+  margin-top: 100px;
+  /*禁止 .container 折叠间距*/
+  padding: 1px;
 }
 
 .main-header {
   background-image: url(../img/banner.jpg);
+  /*main-header 中的所有元素都居中显示*/
+  text-align: center;
+  /*这一句不能少*/
   padding: 1px;
 }
 
 .main-header__avatar {
+  display: block;
+  margin: 0 auto;
   margin-top: -70px;
   margin-bottom: 10px;
   border: 3px solid white;
@@ -52,12 +77,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-nav {
   background-color: #333;
-  padding: 1px;
+  text-align: center;
 }
 
 .main-nav ul {
   /*去除ul的格式*/
   list-style: none;
+  /*把浏览器默认的*/
   padding: 0;
   margin: 0;
 }
@@ -65,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-nav ul li {
   /*设置 li 的外边框*/
   margin: 15px 10px;
-  /*li 设置为内联模式，以便在一行*/
+  /*li 设置为内联间隔清除模式，以便在一行*/
   display: inline-block;
 
 }
@@ -92,16 +118,23 @@ h1, h2, h3, h4, h5, h6 {
   padding: 30px 60px; /* 上下左右留点空*/
 }
 
+.whatido {
+  text-align: center;
+}
+
 .info-section ul {
   list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 .info-section ul li{
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 .info-section header h2 {
   margin-bottom: 20px;
+  text-align: center;
 
   font-size: 28px;
   text-transform: uppercase;
@@ -111,6 +144,9 @@ h1, h2, h3, h4, h5, h6 {
 .info-section header h2:after {
   content: "";
   border-bottom: 3px solid black;
+  display: block;
+  margin: 20 auto;
+  width: 100px;
 }
 
 .info-section__description {
@@ -119,13 +155,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .whatido__skill-list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
     /*overflow: hidden 强制容器有足够的高度包围飘动元素。*/
   overflow: hidden;
 }
+
 /*给每个 li 设置预留图片的位置，图片的相关属性*/
 .whatido__skill {
   background-repeat: no-repeat;
   background-position: center top;
+
   float: left;
   width: 33.3%;
   /*为图片留空间空间*/
@@ -149,8 +190,152 @@ h1, h2, h3, h4, h5, h6 {
   width: 90%;
 }
 
-header h2:after {
-  border-bottom: 3px solid black;
-  border-top: 3px solid black;
 
+
+/*------------------------------------------------------------------------------*/
+/* Education and Experience                                                     */
+/*------------------------------------------------------------------------------*/
+
+
+.education-experience ul li img {
+  float: left;
+  width: 150px;
+  padding: 1px;
 }
+
+/*.education-experience ul li {
+}*/
+
+.education-experience__description  {
+  margin-left: 200px;
+}
+
+.education-experience__title {
+  margin-left: 200px;
+  margin-top: 1px;
+  font-weight: bold;
+}
+
+.education-experience__list h3 {
+  margin-left: 200px;
+  margin-bottom: 5px;
+}
+
+.education-experience__list li {
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 实现Photos                                                                   */
+/*-----------------------------------------------------------------------------*/
+
+.photos {
+  text-align: center;
+  padding: 1px;
+}
+
+.photos__list {
+  padding: 0 60px;
+  overflow: hidden;
+}
+
+.photos__list img {
+  width: 100%;
+}
+
+.photos__list li {
+  width: 25%;
+  float: left;
+  padding: 10px;
+}
+
+.photos header h2:after {
+  content: "";
+  border-bottom: 3px solid black;
+}
+
+
+/*------------------------------------------------------------------------------*/
+/* 实现 Get in touch                                                            */
+/*-----------------------------------------------------------------------------*/
+
+
+
+.get-in-touch ul {
+  margin-top: 30px;
+}
+
+.get-in-touch h2:after{
+    bottom: -10px;
+}
+
+.get-in-touch__list li{
+  box-sizing: border-box;
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+
+.get-in-touch__list li img{
+  height: 100px;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 实现 contact                                                                 */
+/*-----------------------------------------------------------------------------*/
+
+.contact h2 {
+  margin-top: 180px;
+}
+
+.contact input,
+.contact textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+
+  /*宽度和父容器一致*/
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.contact button {
+  border: none;
+  border-radius: 9999px;
+
+  background: #ffd524;
+
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  color: #fff;
+  box-shadow: 0 3px 0 #daae1d;
+
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  margin: 20px 0px;
+}
+
+.contact form{
+  width: 40%;
+  margin: 0px auto;
+  position: relative;
+}
+
+
+.contact label{
+  position: absolute;
+  left: -25%;
+  width: 20%;
+  display: inline-block;
+  text-align: right;
+  height: 36px;
+  line-height: 36px;
+  margin: 10px 5px;
+}
+
+
