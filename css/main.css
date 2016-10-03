@@ -1,11 +1,4 @@
 
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
 /*----------------------------------------*/
 /*固定背景*/
@@ -27,6 +20,12 @@ body {
   color: #62686f;
 }
 
+.clearfix:after{
+    content:"";
+    display:table;
+    clear: both;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #333;
   font-weight: 300;
@@ -46,28 +45,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-header {
+  margin: 0 auto;
+  margin-top: 100px;
   background-image: url(../img/banner.jpg);
-  /*main-header 中的所有元素都居中显示*/
-  text-align: center;
+  height: 240px;
   /*这一句不能少*/
   padding: 1px;
 }
 
 .main-header__avatar {
+  margin: 0 auto;
   display: block;
   margin: 0 auto;
   margin-top: -70px;
   margin-bottom: 10px;
   border: 3px solid white;
+  width: 136px;
 
-  box-shadow: 0 0px 2px 1px rgba(0,0,0,0.2);
   border-radius: 999px;
+  box-shadow: 0 0px 2px 1px rgba(0,0,0,0.2);
 }
 
 .main-header h1 {
+  text-align: center;
+  font-weight: 300;
   font-size: 50px;
+  font-family: 'Open Sans','helvetica',arial,sans-serif;
   text-shadow: 0 1px rgba(0,0,0,0.3);
   color: white;
+  margin-bottom: 20px;
 }
 
 
@@ -116,10 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 .info-section {
   background-color: #fff;
   padding: 30px 60px; /* 上下左右留点空*/
-}
-
-.whatido {
-  text-align: center;
+  /*margin-bottom: 1px;*/
 }
 
 .info-section ul {
@@ -132,29 +135,47 @@ h1, h2, h3, h4, h5, h6 {
   /*display: inline-block;*/
 }
 
-.info-section header h2 {
-  margin-bottom: 20px;
-  text-align: center;
+.info-section h2, header {
+  position: relative;
+}
 
+.info-section h2{
+    position: relative;
+}
+
+/*h2 标题下的横线*/
+.info-section header h2:after {
+  content: "";
+  position: absolute;
+  border-bottom: 3px solid black;
+  width: 60px;
+  bottom: -10px;
+  /*位置：父容器，或者参照容器的一半宽的地方*/
+  left: 50%;
+  /*长度为60px,在左移30px，就居中了*/
+  margin-left: -30px;
+}
+
+.info-section header h2 {
+  text-align: center;
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
-.info-section header h2:after {
-  content: "";
-  border-bottom: 3px solid black;
-  display: block;
-  margin: 20 auto;
-  width: 100px;
-}
 
 .info-section__description {
   font-style: italic;
+  text-align: center;
   margin-bottom: 50px;
 }
 
+.whatido {
+  text-align: center;
+}
+
 .whatido__skill-list {
+  /*去掉列表风格*/
   list-style: none;
   padding: 0px;
   margin: 0px;
@@ -164,7 +185,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /*给每个 li 设置预留图片的位置，图片的相关属性*/
 .whatido__skill {
+  /*禁止背景图重复*/
   background-repeat: no-repeat;
+  /*居中背景图*/
   background-position: center top;
 
   float: left;
@@ -232,28 +255,27 @@ h1, h2, h3, h4, h5, h6 {
 /*-----------------------------------------------------------------------------*/
 
 .photos {
-  text-align: center;
-  padding: 1px;
+    box-sizing: border-box;
 }
 
-.photos__list {
-  padding: 0 60px;
-  overflow: hidden;
+.photos *{
+    box-sizing: inherit;
 }
 
-.photos__list img {
+
+.photos .photos__list{
+    margin: 0px 0px;
+    display: inline-block;
+}
+
+.photos__list li img {
   width: 100%;
 }
 
 .photos__list li {
   width: 25%;
-  float: left;
   padding: 10px;
-}
-
-.photos header h2:after {
-  content: "";
-  border-bottom: 3px solid black;
+  float: left;
 }
 
 
@@ -262,30 +284,33 @@ h1, h2, h3, h4, h5, h6 {
 /*-----------------------------------------------------------------------------*/
 
 
-
-.get-in-touch ul {
-  margin-top: 30px;
-}
-
+.get-in-touch ul {margin-top: 30px;}
 .get-in-touch h2:after{
     bottom: -10px;
 }
-
 .get-in-touch__list li{
-  box-sizing: border-box;
-  float: left;
-  width: 25%;
-  text-align: center;
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    text-align: center;
 }
-
-
+.get-in-touch__list p{
+    text-align: center;
+}
 .get-in-touch__list li img{
-  height: 100px;
+    height: 100px;
 }
 
 /*------------------------------------------------------------------------------*/
 /* 实现 contact                                                                 */
 /*-----------------------------------------------------------------------------*/
+.contact ul{
+  margin-top: 30px;
+}
+
+.contact h2:after{
+  bottom: -10px;
+}
 
 .contact h2 {
   margin-top: 180px;
@@ -321,6 +346,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact form{
+  /*控制了整个input的宽度*/
   width: 40%;
   margin: 0px auto;
   position: relative;
@@ -338,4 +364,91 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 5px;
 }
 
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+    .container {
+        width: 100%;
+    }
+
+
+    .main-header h1{
+        font-size:32px ;
+    }
+    .main-nav .nav_item{
+        display: block;
+    }
+
+    .info-section{
+        padding: 10px;
+    }
+
+    li.whatido__skill{
+        margin-bottom:40px;
+        width: 100%;
+    }
+    .get-in-touch__list li img{
+        height: 100px;
+    }
+    .education-experience__list{
+        text-align: center;
+    }
+    .education-experience__list img{
+        height: 180px;
+        float: none;
+        text-align: center;
+    }
+    .education-experience__list__description{
+        float:none;
+        width: 80%;
+        margin: 0px auto;
+        text-align: left;
+    }
+
+    .education-experience h2 span{
+        display: block;
+    }
+
+    .photos__list li{
+        width: 100%;
+    }
+
+    .get-in-touch__list li{
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+    }
+
+    .contact form{
+        margin: 30px auto;
+        width: 100%;
+    }
+
+    .contact label{
+        position: static;
+        width: auto;
+        height: auto;
+        margin:0px 5px;
+        line-height: normal;
+    }
+    .contact input, .contact textarea{
+        margin: 0px auto;
+        margin-bottom: 20px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
 

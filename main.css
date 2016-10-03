@@ -1,0 +1,350 @@
+body {
+    background-image: url("http://uploads.striking.ly/page/images/backgrounds/bg5.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.clearfix:after{
+    content:"";
+    display:table;
+    clear: both;
+}
+
+.info-section header{
+    position: relative;
+}
+
+.info-section h2{
+    position: relative;
+}
+
+.info-section h2:after{
+    content: "";
+    position: absolute;
+    border-bottom: 3px solid black;
+    width: 60px;
+    bottom: -10px;
+    left:50%;
+    margin-left: -30px;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.main-header {
+    margin: 0 auto;
+    margin-top: 100px;
+    background-image: url("../img/banner.jpg");
+    height: 240px;
+    padding: 1px;
+}
+
+.main-header .main-header__avatar{
+    margin: 0 auto;
+    display:block;
+    margin-top: -70px;
+    margin-bottom:10px;
+    border:3px solid white;
+    width: 136px;
+
+    border-radius: 999px;
+    box-shadow: 0 0px 2px 1px rgba(0,0,0,0.2);
+}
+.main-header h1{
+    text-align: center;
+    font-weight: 300;
+    font-size: 50px;
+    font-family: 'Open Sans','helvetica',arial,sans-serif;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    color:white;
+    margin-bottom: 20px;
+}
+
+.main-nav{
+    text-align: center;
+    background-color: #333;
+}
+
+.main-nav .nav_item{
+    display: inline-block;
+    list-style: none;
+    margin: 15px 10px;
+}
+.main-nav{
+    padding: 1px;
+}
+.main-nav ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.nav_item a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.nav_item a:hover{
+    text-decoration: underline;
+}
+
+.info-section {
+    background-color: #fff;
+    padding: 1px;
+}
+
+.whatido__skill--code {
+    background: url(../img/skill-code.png) no-repeat center top;
+}
+
+.whatido__skill--design {
+    background: url(../img/skill-design.png) no-repeat center top;
+}
+
+.whatido__skill--product {
+    background: url(../img/skill-product.png) no-repeat center top;
+}
+.whatido__skill{
+    height: 130px;
+    float: left;
+    width: 33.3%;
+    margin-top: 60px;
+    padding-top:110px;
+}
+
+.whatido__skill h3{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.whatido__skill p{
+    margin: 0px auto;
+    text-align: center;
+    width: 90%;
+}
+
+.info-section__description{
+    text-align: center;
+}
+
+.info-section {
+    padding: 30px 60px;
+}
+
+.info-section header h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.info-section__description {
+    font-style: italic;
+}
+
+/*Education and Experience*/
+.education-experience ul{
+    margin-top: 30px;
+}
+.education-experience h2:after{
+    bottom: -10px;
+}
+
+.education-experience__list{
+    margin-top:30px ;
+}
+.education-experience__list li{
+    margin:20px 0px;
+}
+.education-experience__list img{
+    height: 180px;
+    float: left;
+}
+.education-experience__list__description{
+    float:left;
+    overflow: hidden;
+    width: 60%;
+    margin-left: 40px;
+}
+
+/*photo*/
+.photos {
+    box-sizing: border-box;
+}
+
+.photos *{
+    box-sizing: inherit;
+}
+
+
+.photos .photos__list{
+    margin: 30px 0px;
+}
+.photos__list li{
+    width: 25%;
+    padding: 10px;
+    float: left;
+}
+.photos__list li img{
+    width: 100%;
+}
+
+/*get in touch*/
+.get-in-touch ul {margin-top: 30px;}
+.get-in-touch h2:after{
+    bottom: -10px;
+}
+.get-in-touch__list li{
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.get-in-touch__list p{
+    text-align: center;
+}
+.get-in-touch__list li img{
+    height: 100px;
+}
+
+/*leave a message*/
+.contact ul{
+    margin-top: 30px;
+}
+.contact h2:after{
+    bottom: -10px;
+}
+
+.contact input,
+.contact textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.contact button {
+    border: none;
+    border-radius: 9999px;
+
+    background: #ffd524;
+
+    cursor: pointer;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    color: #fff;
+    box-shadow: 0 3px 0 #daae1d;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    margin: 20px 0px;
+}
+
+.contact form{
+    width: 40%;
+    margin: 0px auto;
+    position: relative;
+}
+
+.contact label{
+    position: absolute;
+    left: -25%;
+    width: 20%;
+    display: inline-block;
+    text-align: right;
+    height: 36px;
+    line-height: 36px;
+    margin: 10px 5px;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+    .container {
+        width: 100%;
+    }
+
+
+    .main-header h1{
+        font-size:32px ;
+    }
+    .main-nav .nav_item{
+        display: block;
+    }
+
+    .info-section{
+        padding: 10px;
+    }
+
+    li.whatido__skill{
+        margin-bottom:40px;
+        width: 100%;
+    }
+    .get-in-touch__list li img{
+        height: 100px;
+    }
+    .education-experience__list{
+        text-align: center;
+    }
+    .education-experience__list img{
+        height: 180px;
+        float: none;
+        text-align: center;
+    }
+    .education-experience__list__description{
+        float:none;
+        width: 80%;
+        margin: 0px auto;
+        text-align: left;
+    }
+
+    .education-experience h2 span{
+        display: block;
+    }
+
+    .photos__list li{
+        width: 100%;
+    }
+
+    .get-in-touch__list li{
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+    }
+
+    .contact form{
+        margin: 30px auto;
+        width: 100%;
+    }
+
+    .contact label{
+        position: static;
+        width: auto;
+        height: auto;
+        margin:0px 5px;
+        line-height: normal;
+    }
+    .contact input, .contact textarea{
+        margin: 0px auto;
+        margin-bottom: 20px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
